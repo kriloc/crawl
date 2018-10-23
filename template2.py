@@ -42,7 +42,11 @@ def index():
         title = '2017.01不同類型房屋單價情況',
     )
     fig = go.Figure(data = data, layout=layout)
-    div = pyplt(fig, output_type='div', auto_open=False, show_link=False)
+    div = pyplt(fig, output_type='div', auto_open=False, show_link=False, link_text=False,
+                include_plotlyjs=False,
+                # config=dict(displaylogo=False, modeBarButtonsToRemove=['sendDataToCloud'])
+                config = dict(displaylogo=False, displayModeBar=False)
+                )
     context = {}
     context['graph'] = div
 
