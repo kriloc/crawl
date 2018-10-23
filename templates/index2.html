@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plotly嵌入Flask案例</title>
+    <style type="text/css">
+    	div.content {
+    		padding: 1em 5em;
+    	}
+    	div.graph {
+    		margin: 10px auto;
+    		width: 70%;
+    	}
+    </style>
+
+   <script  src="{{ url_for('static', filename='js/plotly.min.js') }}" ></script>
+
+</head>
+<body>
+<div class='content'>
+	<h2>用Python爬蟲抓取最新的房價數據</h2>
+	<div>
+		<p>
+		 部分城市的房價迅速上漲，多地出台樓市限制政策。未來房價走勢如何？由於影響因素的多樣性，目前還沒有發現任何一種研究分析能夠確切地預測，但我們可以自己動手從網絡上抓取房價的最新數據，密切關注最新的房價信息，結合實際情況做出自己的判斷。
+		</p>
+		<p>
+			下面數據化分析以鏈家網為例，利用Python爬蟲抓取的在三種戶型的平均房價（千/平方米)：
+		</p>
+	</div>
+
+
+    <div class='graph'>
+
+    <h1> {{context.graph |safe }} </h1>
+
+   </div>
+
+	<div>
+    	<p>從圖上可以看出，C類戶型的平均房價最高，最受歡迎，其次是A類戶型，最後是B類戶型</p>
+	</div>
+</div>
+
+
+</body>
+</html>
